@@ -209,8 +209,10 @@ class NonNTMessageStyleNotification(private val parent: MessagingStyleNotificati
                     IconCompat.createWithBitmap(bitmap!!)
                 )
                     .setDesiredHeight(600)
-                    .build()
-
+                    .setIntent(bubbleIntent)
+                    .setAutoExpandBubble(true)
+                    .setSuppressNotification(true)
+                    .build();
                 val shortcut =
                     ShortcutInfoCompat.Builder(context, key)
                         .setIntent(intent)
